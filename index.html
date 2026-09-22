@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MinAli Boutique Hotel — AI Chat</title>
+
+<style>
+
+/* =========================================================
+   UMUMI
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:
+        radial-gradient(circle at top left,#eadfce 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#e7d8c4 0%,transparent 35%),
+        #f2eee8;
+
+    color:#30291f;
+
+    font-family:
+        Arial,
+        "Segoe UI",
+        "Noto Sans",
+        sans-serif;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app{
+    width:100%;
+    max-width:520px;
+    height:100vh;
+    height:100dvh;
+    min-height:600px;
+
+    margin:0 auto;
+
+    background:#fbfaf8;
+
+    display:flex;
+    flex-direction:column;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:20px 18px 17px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #382d20 0%,
+            #685039 48%,
+            #9a7955 100%
+        );
+
+    box-shadow:
+        0 5px 25px rgba(55,40,25,.25);
+}
+
+.header:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    right:-100px;
+    top:-140px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.header:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    left:-90px;
+    bottom:-110px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+
+.header-top{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+.logo-circle{
+
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+    border-radius:15px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(255,255,255,.14);
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    font-size:23px;
+
+    backdrop-filter:blur(8px);
+}
+
+
+.brand{
+
+    font-size:19px;
+
+    font-weight:800;
+
+    letter-spacing:.3px;
+}
+
+
+.sub{
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    opacity:.82;
+}
+
+
+.ai-status{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:13px;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.16);
+
+    font-size:11px;
+}
+
+
+.status-dot{
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#8dffb0;
+
+    box-shadow:
+        0 0 10px #8dffb0;
+}
+
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+.chat{
+
+    flex:1;
+
+    min-height:0;
+
+    overflow-y:auto;
+
+    padding:16px 13px 15px;
+
+    scroll-behavior:smooth;
+
+    -webkit-overflow-scrolling:touch;
+}
+
+
+.chat::-webkit-scrollbar{
+    width:5px;
+}
+
+.chat::-webkit-scrollbar-thumb{
+
+    background:#d5c9ba;
+
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f7f2eb
+        );
+
+    border:
+        1px solid #e7ddd0;
+
+    border-radius:20px;
+
+    padding:16px;
+
+    margin-bottom:13px;
+
+    box-shadow:
+        0 8px 25px rgba(65,48,30,.07);
+}
+
+
+.welcome:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+    height:110px;
+
+    right:-50px;
+    top:-50px;
+
+    background:#eadfce;
+
+    border-radius:50%;
+}
+
+
+.welcome b{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:17px;
+}
+
+
+.welcome p{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    color:#766d62;
+
+    margin:8px 0 0;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.msg{
+
+    display:flex;
+
+    margin:10px 0;
+
+    animation:
+        messageIn .25s ease;
+}
+
+
+@keyframes messageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.msg.user{
+
+    justify-content:flex-end;
+}
+
+
+.bubble{
+
+    max-width:88%;
+
+    padding:12px 14px;
+
+    border-radius:18px;
+
+    font-size:14px;
+
+    line-height:1.55;
+
+    white-space:pre-line;
+
+    word-wrap:break-word;
+}
+
+
+.bot .bubble{
+
+    background:#ffffff;
+
+    border:
+        1px solid #e7dfd5;
+
+    border-bottom-left-radius:5px;
+
+    color:#332d25;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.04);
+}
+
+
+.user .bubble{
+
+    background:
+        linear-gradient(
+            135deg,
+            #60482f,
+            #987650
+        );
+
+    color:#fff;
+
+    border-bottom-right-radius:5px;
+
+    box-shadow:
+        0 5px 15px rgba(80,55,30,.18);
+}
+
+
+/* =========================================================
+   QUICK
+========================================================= */
+
+.quick-title{
+
+    padding:5px 13px 3px;
+
+    font-size:11px;
+
+    color:#81776b;
+
+    background:#fbfaf8;
+}
+
+
+.quick{
+
+    display:flex;
+
+    gap:7px;
+
+    overflow-x:auto;
+
+    padding:7px 11px 10px;
+
+    background:#fbfaf8;
+
+    -webkit-overflow-scrolling:touch;
+}
+
+
+.quick::-webkit-scrollbar{
+    display:none;
+}
+
+
+.quick button{
+
+    flex-shrink:0;
+
+    border:
+        1px solid #ded3c6;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:9px 13px;
+
+    white-space:nowrap;
+
+    color:#5b4731;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+
+.quick button:hover{
+
+    background:#f2e9de;
+
+    transform:translateY(-1px);
+}
+
+
+.quick button:active{
+
+    transform:scale(.96);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu-link{
+
+    display:block;
+
+    margin:7px 13px 8px;
+
+    padding:11px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#5a4733;
+
+    background:#f3ebe2;
+
+    border:
+        1px solid #e3d6c7;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+
+    position:absolute;
+
+    right:14px;
+
+    bottom:78px;
+
+    z-index:20;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:10px 13px 10px 10px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #159447,
+            #22c55e
+        );
+
+    box-shadow:
+        0 8px 25px rgba(22,163,74,.32);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    animation:
+        whatsappPulse 2.4s infinite;
+}
+
+
+.whatsapp-icon{
+
+    width:27px;
+    height:27px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.18);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:16px;
+}
+
+
+@keyframes whatsappPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+
+}
+
+
+/* =========================================================
+   COMPOSER
+========================================================= */
+
+.composer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        9px
+        12px
+        max(12px, env(safe-area-inset-bottom));
+
+    border-top:
+        1px solid #e4ddd5;
+
+    background:
+        rgba(255,255,255,.97);
+
+    position:relative;
+
+    z-index:30;
+}
+
+
+.composer input{
+
+    flex:1;
+
+    min-width:0;
+
+    height:46px;
+
+    border:
+        1px solid #d9cfc4;
+
+    border-radius:25px;
+
+    padding:
+        0 15px;
+
+    outline:none;
+
+    font-size:14px;
+
+    color:#30291f;
+
+    background:#faf8f5;
+
+    -webkit-appearance:none;
+
+    appearance:none;
+}
+
+
+.composer input:focus{
+
+    border-color:#967552;
+
+    box-shadow:
+        0 0 0 3px rgba(150,117,82,.10);
+}
+
+
+.send{
+
+    width:46px;
+    height:46px;
+
+    min-width:46px;
+
+    flex-shrink:0;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #59432d,
+            #9a7851
+        );
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 15px rgba(70,50,30,.2);
+
+    transition:.2s;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    touch-action:manipulation;
+}
+
+
+.send:hover{
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media(min-width:600px){
+
+    body{
+        padding:20px;
+    }
+
+    .app{
+
+        height:
+            calc(100vh - 40px);
+
+        height:
+            calc(100dvh - 40px);
+
+        border-radius:25px;
+
+        overflow:hidden;
+
+        box-shadow:
+            0 15px 50px rgba(50,35,20,.18);
+    }
+
+}
+
+
+/* =========================================================
+   TELEFONLAR
+========================================================= */
+
+@media(max-width:599px){
+
+    body{
+        overflow:hidden;
+    }
+
+    .app{
+
+        width:100%;
+
+        max-width:none;
+
+        height:100vh;
+
+        height:100dvh;
+
+        min-height:0;
+
+        margin:0;
+
+        border-radius:0;
+    }
+
+}
+
+
+/* =========================================================
+   KICIK TELEFON
+========================================================= */
+
+@media(max-width:360px){
+
+    .header{
+
+        padding:
+            15px 13px 13px;
+    }
+
+    .logo-circle{
+
+        width:42px;
+        height:42px;
+
+        font-size:20px;
+    }
+
+    .brand{
+        font-size:16px;
+    }
+
+    .sub{
+        font-size:11px;
+    }
+
+    .bubble{
+
+        max-width:92%;
+
+        font-size:13px;
+    }
+
+    .quick button{
+
+        font-size:11px;
+
+        padding:
+            8px 10px;
+    }
+
+    .whatsapp{
+
+        right:9px;
+
+        bottom:77px;
+
+        padding:
+            8px 10px 8px 8px;
+    }
+
+}
+
+
+/* =========================================================
+   KEYBOARD ACILANDA INPUT SABIT
+========================================================= */
+
+@supports (height: 100dvh){
+
+    .app{
+        height:100dvh;
+    }
+
+}
+
+
+/* =========================================================
+   IOS INPUT ZOOMUNUN QARSISINI ALIR
+========================================================= */
+
+@media(max-width:600px){
+
+    .composer input{
+        font-size:16px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH
+========================================================= */
+
+button,
+a,
+input{
+    -webkit-tap-highlight-color:transparent;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-top">
+
+        <div class="logo-circle">
+            ???
+        </div>
+
+        <div>
+
+            <div class="brand">
+                MINALI BOUTIQUE HOTEL
+            </div>
+
+            <div class="sub">
+                S?ki s?h?r m?rk?zi • AI Concierge
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="ai-status">
+
+        <span class="status-dot"></span>
+
+        AI Concierge aktivdir
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     CHAT
+===================================================== -->
+
+<main class="chat" id="chat">
+
+
+    <div class="welcome">
+
+        <b>
+            Salam! MinAli Boutique Hotel-? xos g?lmisiniz ??
+        </b>
+
+        <p>
+
+            Siz AI Concierge il? yaz?s?rs?n?z.
+            Otaqlar, qiym?tl?r, restoran, rezervasiya
+            v? otelimiz haqq?nda dig?r m?lumatlar?
+            buradan oyr?n? bil?rsiniz.
+
+        </p>
+
+    </div>
+
+
+    <div class="msg bot">
+
+        <div class="bubble">
+
+            Siz? nec? kom?k ed? bil?r?m? ??
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<a
+    class="menu-link"
+    href="https://wa.me/994504920044?text=Salam%2C%20restoran%20menyusuna%20baxmaq%20ist%C9%99yir%C9%99m."
+    target="_blank"
+    rel="noopener"
+>
+
+    ??? Restoran menyusuna baxmaq ucun WhatsApp
+
+</a>
+
+
+<!-- =====================================================
+     QUICK BUTTONS
+===================================================== -->
+
+<div class="quick-title">
+
+    Tez-tez sorusulanlar
+
+</div>
+
+
+<div class="quick">
+
+
+    <button onclick="ask('Salam')">
+        ?? Salam
+    </button>
+
+
+    <button onclick="ask('Qiym?tl?r')">
+        ?? Qiym?tl?r
+    </button>
+
+
+    <button onclick="ask('Standart otaq')">
+        ??? Standart
+    </button>
+
+
+    <button onclick="ask('3 n?f?rlik otaq')">
+        ?? 3 n?f?rlik
+    </button>
+
+
+    <button onclick="ask('Deluxe otaq')">
+        ? Deluxe
+    </button>
+
+
+    <button onclick="ask('Suite otaq')">
+        ? Suite
+    </button>
+
+
+    <button onclick="ask('Ail? otag?')">
+        ???????? Ail? otag?
+    </button>
+
+
+    <button onclick="ask('Restoran')">
+        ??? Restoran
+    </button>
+
+
+    <button onclick="ask('Rezervasiya')">
+        ?? Rezervasiya
+    </button>
+
+
+    <button onclick="ask('?lav? s?xs')">
+        ??? ?lav? s?xs
+    </button>
+
+
+    <button onclick="ask('Booking')">
+        ?? Booking
+    </button>
+
+
+    <button onclick="ask('Instagram')">
+        ?? Instagram
+    </button>
+
+
+</div>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/994504920044"
+    target="_blank"
+    rel="noopener"
+>
+
+    <span class="whatsapp-icon">
+        ?
+    </span>
+
+    WhatsApp
+
+</a>
+
+
+<!-- =====================================================
+     INPUT
+===================================================== -->
+
+<form
+    class="composer"
+    id="composer"
+>
+
+    <input
+        id="input"
+        type="text"
+        placeholder="Sual?n?z? yaz?n..."
+        autocomplete="off"
+        enterkeyhint="send"
+    >
+
+    <button
+        class="send"
+        type="submit"
+        aria-label="Gond?r"
+    >
+
+        ?
+
+    </button>
+
+</form>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   MINALI BOUTIQUE HOTEL M?LUMAT BAZASI
+========================================================= */
+
+
+const data = {
+
+
+/* =====================================================
+   STANDART
+===================================================== */
+
+standard: `??? STANDART OTAQ
+
+Standart otaqlar?m?zdan umumilikd? 6 ?d?d movcuddur.
+
+Qiym?t: 99 AZN
+
+Standart otaqlar qonag?n ist?yin? uygun olaraq:
+
+• DBL — bir boyuk carpay?
+• Twin — iki ayr? carpay?
+
+variant?nda haz?rlana bil?r.
+
+5 yasdan yuxar? ?lav? s?xs ucun:
++30 AZN
+
+?lav? qiym?t? ?lav? carpay? v? s?h?r yem?yi daxildir.`,
+
+
+/* =====================================================
+   3 N?F?RLIK
+===================================================== */
+
+triple: `?? 3 N?F?RLIK OTAQ
+
+Oteld? 3 ?d?d 3 n?f?rlik otaq movcuddur.
+
+Qiym?t: 149 AZN
+
+Otaqlar q?dimi v? xususi dizayn uslubundad?r.
+
+Carpay? secimi qonag?n ist?yin? uygun olaraq
+movcudluga ?sas?n d?yisdiril? bil?r.
+
+5 yasdan yuxar? ?lav? s?xs ucun:
++30 AZN
+
+?lav? carpay? v? s?h?r yem?yi daxildir.`,
+
+
+/* =====================================================
+   DELUXE
+===================================================== */
+
+deluxe: `? DELUXE OTAQ
+
+Oteld? 2 ?d?d Deluxe otaq movcuddur.
+
+Balkonlu Deluxe:
+130 AZN
+
+Balkonsuz Deluxe:
+120 AZN
+
+Otaqlar qonag?n ist?yin? uygun olaraq,
+movcudluga ?sas?n DBL v? ya Twin carpay? il? haz?rlana bil?r.
+
+5 yasdan yuxar? ?lav? s?xs ucun:
++30 AZN
+
+?lav? carpay? v? s?h?r yem?yi daxildir.`,
+
+
+/* =====================================================
+   SUITE
+===================================================== */
+
+suite: `? SUITE OTAQ
+
+Qiym?t:
+219 AZN
+
+Suite otaq daha genis v? komfortlu yerl?sm? ucun n?z?rd? tutulub.
+
+Carpay? secimi movcudluga ?sas?n
+DBL v? ya Twin ola bil?r.
+
+5 yasdan yuxar? ?lav? s?xs ucun:
++30 AZN
+
+?lav? carpay? v? s?h?r yem?yi daxildir.`,
+
+
+/* =====================================================
+   AIL?
+===================================================== */
+
+family: `???????? AIL? OTAGI
+
+Qiym?t:
+219 AZN
+
+Ail? otag? 2 otaqdan ibar?tdir.
+
+Otaqda:
+
+• 2 ayr? otaq
+• Jacuzzi
+• Balkon
+• Dag m?nz?r?si
+
+movcuddur.
+
+5 yasdan yuxar? ?lav? s?xs ucun:
++30 AZN
+
+?lav? carpay? v? s?h?r yem?yi daxildir.`,
+
+
+/* =====================================================
+   RESTORAN
+===================================================== */
+
+restaurant: `??? MINALI BOUTIQUE HOTEL RESTORANI
+
+Restoran?m?z otelin 3-cu m?rt?b?sind? yerl?sir.
+
+Menyumuz milli v? Avropa m?tb?xinin
+muxt?lif yem?kl?ri il? z?ngindir.
+
+Restoran menyusuna baxmaq ucun
+WhatsApp vasit?sil? komandam?zla ?laq? saxlaya bil?rsiniz.
+
+?? +994 50 492 00 44`,
+
+
+/* =====================================================
+   HOTEL
+===================================================== */
+
+hotel: `??? MINALI BOUTIQUE HOTEL
+
+Otelimiz S?ki s?h?rinin m?rk?zind?,
+qoruq ?razisind? yerl?sir.
+
+Xan Saray?na ged?n yolun uz?rind? yerl?sirik.
+
+Otelimizin binas? 1896-c? ild? tikilmis tarixi binad?r.
+
+Binan?n t?mirin? 2011-ci ild? baslan?l?b
+v? 2019-cu ild? istifad?y? verilib.
+
+Umumilikd? oteld? 12 otaq movcuddur.
+
+?? +994 50 492 00 44`,
+
+
+/* =====================================================
+   PRICES
+===================================================== */
+
+prices: `?? MINALI BOUTIQUE HOTEL — QIYM?TL?R
+
+????????????????
+
+??? STANDART
+
+6 otaq
+99 AZN
+
+DBL v? ya Twin
+
+????????????????
+
+?? 3 N?F?RLIK
+
+3 otaq
+149 AZN
+
+Q?dimi dizayn
+
+????????????????
+
+? DELUXE
+
+Balkonlu:
+130 AZN
+
+Balkonsuz:
+120 AZN
+
+????????????????
+
+? SUITE
+
+219 AZN
+
+????????????????
+
+???????? AIL? OTAGI
+
+2 otaq
+Jacuzzi
+Balkon
+Dag m?nz?r?si
+
+219 AZN
+
+????????????????
+
+??? ?LAV? S?XS
+
+5 yasdan yuxar?:
++30 AZN / n?f?r
+
+?lav? carpay? v? s?h?r yem?yi daxildir.
+
+????????????????
+
+?? Bayram v? xususi gunl?rd?
+qiym?tl?r d?yis? bil?r.`
+
+
+};
+
+
+/* =========================================================
+   NORMALIZE
+========================================================= */
+
+function normalizeText(text){
+
+    return text
+        .toLocaleLowerCase("az-AZ")
+        .trim()
+        .replace(/[?]/g,"e")
+        .replace(/[?]/g,"i")
+        .replace(/[o]/g,"o")
+        .replace(/[u]/g,"u")
+        .replace(/[s]/g,"s")
+        .replace(/[c]/g,"c")
+        .replace(/[g]/g,"g");
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function add(text,who="bot"){
+
+    const wrap=document.createElement("div");
+
+    wrap.className="msg "+who;
+
+    const bubble=document.createElement("div");
+
+    bubble.className="bubble";
+
+    bubble.textContent=text;
+
+    wrap.appendChild(bubble);
+
+    document.getElementById("chat").appendChild(wrap);
+
+    const chat=document.getElementById("chat");
+
+    requestAnimationFrame(function(){
+
+        chat.scrollTop=chat.scrollHeight;
+
+    });
+
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+function answer(question){
+
+    const x=normalizeText(question);
+
+
+    /* SALAM */
+
+    if(
+        x==="salam" ||
+        x.startsWith("salam ") ||
+        x.includes("salam,")
+    ){
+
+        return "Salam! ?? MinAli Boutique Hotel-? xos g?lmisiniz. Siz? nec? kom?k ed? bil?r?m?";
+
+    }
+
+
+    /* SABAH */
+
+    if(
+        x.includes("sabahiniz xeyir") ||
+        x.includes("sabahiniz xeyirli") ||
+        x.includes("sabah xeyir")
+    ){
+
+        return "Sabah?n?z xeyir! ?? MinAli Boutique Hotel-? xos g?lmisiniz. Siz? nec? kom?k ed? bil?r?m?";
+
+    }
+
+
+    /* AXSAM */
+
+    if(
+        x.includes("axsaminiz xeyir") ||
+        x.includes("axsaminiz xeyirli") ||
+        x.includes("axsam xeyir")
+    ){
+
+        return "Axsam?n?z xeyir! ?? Siz? nec? kom?k ed? bil?r?m?";
+
+    }
+
+
+    /* HOTEL */
+
+    if(
+        x.includes("otel haqqinda") ||
+        x.includes("hotel haqqinda") ||
+        x.includes("umumi melumat") ||
+        x.includes("harada yerlesir") ||
+        x.includes("harada yerl?sir") ||
+        x.includes("tarixi bina") ||
+        x.includes("1896") ||
+        x.includes("xan sarayi") ||
+        x.includes("sheki") ||
+        x.includes("seki")
+    ){
+
+        return data.hotel;
+
+    }
+
+
+    /* QIYM?TL?R */
+
+    if(
+        x==="qiymet" ||
+        x==="qiymetler" ||
+        x.includes("qiymetleri deyerdiz") ||
+        x.includes("ne qederdir") ||
+        x.includes("otaq qiymeti") ||
+        x.includes("otaqlarin qiymeti") ||
+        x.includes("qiymet necedir") ||
+        x.includes("bayram gunleri necedir")
+    ){
+
+        return data.prices;
+
+    }
+
+
+    /* STANDART */
+
+    if(
+        x.includes("standart") ||
+        x.includes("standart otaq") ||
+        x.includes("99 azn") ||
+        x.includes("99 manat")
+    ){
+
+        return data.standard;
+
+    }
+
+
+    /* 3 N?F?RLIK */
+
+    if(
+        x.includes("3 neferlik") ||
+        x.includes("3 neferlik otaq") ||
+        x.includes("uc neferlik") ||
+        x.includes("3 nefer")
+    ){
+
+        return data.triple;
+
+    }
+
+
+    /* DELUXE */
+
+    if(
+        x.includes("deluxe") ||
+        x.includes("deluks") ||
+        x.includes("balkonlu") ||
+        x.includes("balkonsuz")
+    ){
+
+        return data.deluxe;
+
+    }
+
+
+    /* SUITE */
+
+    if(
+        x.includes("suite") ||
+        x.includes("suit") ||
+        x.includes("su?t")
+    ){
+
+        return data.suite;
+
+    }
+
+
+    /* AIL? */
+
+    if(
+        x.includes("aile") ||
+        x.includes("ail?") ||
+        x.includes("family") ||
+        x.includes("4 neferlik")
+    ){
+
+        return data.family;
+
+    }
+
+
+    /* 5+ S?XS */
+
+    if(
+        x.includes("elave sexs") ||
+        x.includes("elave nefer") ||
+        x.includes("5 yas") ||
+        x.includes("5 yasdan") ||
+        x.includes("5+ sexs") ||
+        x.includes("usaq") ||
+        x.includes("elave carpayi") ||
+        x.includes("elave carpayi")
+    ){
+
+        return `??? ?LAV? S?XS
+
+5 yasdan yuxar? ?lav? s?xs ucun:
+
++30 AZN / n?f?r
+
+Qiym?t?:
+
+• ?lav? carpay?
+• S?h?r yem?yi
+
+daxildir.
+
+Konkret otaq ucun ?lav? s?xsin yerl?sdirilm?sini komandam?zla d?qiql?sdir? bil?rsiniz.
+
+?? +994 50 492 00 44`;
+
+    }
+
+
+    /* RESTORAN */
+
+    if(
+        x.includes("restoran") ||
+        x.includes("restaran") ||
+        x.includes("menyu") ||
+        x.includes("yemek") ||
+        x.includes("milli metbex") ||
+        x.includes("avropa metbex")
+    ){
+
+        return data.restaurant;
+
+    }
+
+
+    /* REZERVASIYA */
+
+    if(
+        x.includes("rezervasiya") ||
+        x.includes("rezerv") ||
+        x.includes("bron") ||
+        x.includes("bos yer") ||
+        x.includes("2 neferlik otaq var")
+    ){
+
+        return `?? REZERVASIYA
+
+Rezervasiya v? bos otaqlar haqq?nda d?qiq m?lumat ucun komandam?zla ?laq? saxlamag?n?z? xahis edirik.
+
+?? +994 50 492 00 44
+
+Siz biz? asag?dak? m?lumatlar? gond?r? bil?rsiniz:
+
+• Giris tarixi
+• C?x?s tarixi
+• Qonaq say?
+• Ist?diyiniz otaq tipi
+
+Komandam?z siz? movcud otaqlar? v? qiym?ti bildir?c?k.`;
+
+    }
+
+
+    /* L?GV */
+
+    if(
+        x.includes("legv") ||
+        x.includes("rezervasiyani legv")
+    ){
+
+        return `?? REZERVASIYANIN L?GVI
+
+Rezervasiyan?z? l?gv etm?k ist?yirsinizs?,
+z?hm?t olmasa komandam?zla ?laq? saxlay?n.
+
+?? +994 50 492 00 44
+
+Komandam?z rezervasiyan?z?n l?gvi il? bagl? siz? kom?k ed?c?k.`;
+
+    }
+
+
+    /* BOOKING */
+
+    if(
+        x.includes("booking") ||
+        x.includes("bookingden")
+    ){
+
+        return `?? BOOKING
+
+MinAli Boutique Hotel ucun Booking s?hif?mizd?n d? rezervasiya ed? bil?rsiniz.
+
+Booking-d?:
+
+"MinAli Boutique Hotel"
+
+ad?n? axtararaq otelimizi tapa bil?rsiniz.`;
+
+    }
+
+
+    /* INSTAGRAM */
+
+    if(
+        x.includes("instagram") ||
+        x.includes("insta")
+    ){
+
+        return `?? INSTAGRAM
+
+Instagram s?hif?mizd? otelimizin s?kil v? videolar? il? tan?s ola bil?rsiniz.
+
+Yeni paylas?mlar v? otelimiz haqq?nda goruntul?r ucun bizi Instagram-da izl?y? bil?rsiniz.`;
+
+    }
+
+
+    /* CARPAYI */
+
+    if(
+        x.includes("twin") ||
+        x.includes("dbl") ||
+        x.includes("double") ||
+        x.includes("ayri carpayi") ||
+        x.includes("boyuk carpayi")
+    ){
+
+        return `??? CARPAYI SECIMI
+
+Otelimizd? otaq tipind?n as?l? olaraq carpay? secimi mumkundur.
+
+• DBL — bir boyuk carpay?
+• Twin — iki ayr? carpay?
+
+Qonag?n ist?yin? uygun secim etm?k mumkundur.
+
+Qeyd:
+Konkret carpay? tipinin movcudlugunu rezervasiya zaman? komandam?zla d?qiql?sdirm?k olar.
+
+?? +994 50 492 00 44`;
+
+    }
+
+
+    /* BAYRAM */
+
+    if(
+        x.includes("bayram") ||
+        x.includes("xususi gun")
+    ){
+
+        return `?? BAYRAM V? XUSUSI GUNL?R
+
+Bayram v? xususi gunl?rd? otaq qiym?tl?ri d?yis? bil?r.
+
+?n aktual qiym?ti oyr?nm?k ucun:
+
+?? +994 50 492 00 44
+
+nomr?si il? komandam?zla ?laq? saxlaya bil?rsiniz.`;
+
+    }
+
+
+    /* QRUP */
+
+    if(
+        x.includes("qrup") ||
+        x.includes("qrup rezervasiya")
+    ){
+
+        return `?? QRUP REZERVASIYASI
+
+Qrup rezervasiyalar?nda otaq say?ndan as?l? olaraq qiym?td? endirim t?tbiq oluna bil?r.
+
+D?qiq qiym?t ucun qonaq say?n? v? t?l?b olunan otaq say?n? biz? bildir? bil?rsiniz.
+
+?? +994 50 492 00 44`;
+
+    }
+
+
+    /* CONTACT */
+
+    if(
+        x.includes("telefon") ||
+        x.includes("nomre") ||
+        x.includes("elaqe") ||
+        x.includes("whatsapp")
+    ){
+
+        return `?? ?LAQ?
+
+MinAli Boutique Hotel
+
+Telefon / WhatsApp:
+
++994 50 492 00 44
+
+?? minaliboutiquehotel@gmail.com`;
+
+    }
+
+
+    /* DEFAULT */
+
+    return `Bu sual ucun haz?r m?lumat bazam?zda d?qiq cavab yoxdur.
+
+Z?hm?t olmasa komandam?zla ?laq? saxlay?n.
+Siz? m?mnuniyy?tl? kom?k ed?c?yik.
+
+?? +994 50 492 00 44
+
+?? WhatsApp vasit?sil? d? biz? yaza bil?rsiniz.`;
+
+}
+
+
+/* =========================================================
+   ASK
+========================================================= */
+
+function ask(question){
+
+    add(question,"user");
+
+    setTimeout(function(){
+
+        add(answer(question),"bot");
+
+    },300);
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+document.getElementById("composer")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const input=document.getElementById("input");
+
+    const question=input.value.trim();
+
+    if(!question){
+        return;
+    }
+
+    input.value="";
+
+    ask(question);
+
+});
+
+
+/* =========================================================
+   ENTER
+========================================================= */
+
+document.getElementById("input")
+.addEventListener("keydown",function(event){
+
+    if(event.key==="Enter"){
+
+        event.preventDefault();
+
+        document.getElementById("composer")
+        .requestSubmit();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
