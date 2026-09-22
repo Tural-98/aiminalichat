@@ -5,12 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MinAli Boutique Hotel � AI Chat</title>
+<title>MinAli Boutique Hotel — AI Chat</title>
 
 <style>
 
 /* =========================================================
-   UMUMI
+   ÜMUMİ
 ========================================================= */
 
 *{
@@ -785,7 +785,7 @@ body{
 
 
 /* =========================================================
-   KICIK TELEFON
+   KİÇİK TELEFON
 ========================================================= */
 
 @media(max-width:360px){
@@ -841,7 +841,7 @@ body{
 
 
 /* =========================================================
-   KEYBOARD ACILANDA INPUT SABIT
+   KEYBOARD AÇILANDA INPUT SABİT
 ========================================================= */
 
 @supports (height: 100dvh){
@@ -854,7 +854,7 @@ body{
 
 
 /* =========================================================
-   IOS INPUT ZOOMUNUN QARSISINI ALIR
+   IOS INPUT ZOOMUNUN QARŞISINI ALIR
 ========================================================= */
 
 @media(max-width:600px){
@@ -896,7 +896,7 @@ input{
     <div class="header-top">
 
         <div class="logo-circle">
-            ???
+            🏛️
         </div>
 
         <div>
@@ -906,7 +906,7 @@ input{
             </div>
 
             <div class="sub">
-                S?ki s?h?r m?rk?zi � AI Concierge
+                Şəki şəhər mərkəzi • AI Concierge
             </div>
 
         </div>
@@ -935,15 +935,15 @@ input{
     <div class="welcome">
 
         <b>
-            Salam! MinAli Boutique Hotel-? xos g?lmisiniz ??
+            Salam! MinAli Boutique Hotel-ə xoş gəlmisiniz 👋
         </b>
 
         <p>
 
-            Siz AI Concierge il? yaz?s?rs?n?z.
-            Otaqlar, qiym?tl?r, restoran, rezervasiya
-            v? otelimiz haqq?nda dig?r m?lumatlar?
-            buradan oyr?n? bil?rsiniz.
+            Siz AI Concierge ilə yazışırsınız.
+            Otaqlar, qiymətlər, restoran, rezervasiya
+            və otelimiz haqqında digər məlumatları
+            buradan öyrənə bilərsiniz.
 
         </p>
 
@@ -954,7 +954,7 @@ input{
 
         <div class="bubble">
 
-            Siz? nec? kom?k ed? bil?r?m? ??
+            Sizə necə kömək edə bilərəm? 😊
 
         </div>
 
@@ -975,7 +975,7 @@ input{
     rel="noopener"
 >
 
-    ??? Restoran menyusuna baxmaq ucun WhatsApp
+    🍽️ Restoran menyusuna baxmaq üçün WhatsApp
 
 </a>
 
@@ -986,7 +986,7 @@ input{
 
 <div class="quick-title">
 
-    Tez-tez sorusulanlar
+    Tez-tez soruşulanlar
 
 </div>
 
@@ -995,62 +995,62 @@ input{
 
 
     <button onclick="ask('Salam')">
-        ?? Salam
+        👋 Salam
     </button>
 
 
-    <button onclick="ask('Qiym?tl?r')">
-        ?? Qiym?tl?r
+    <button onclick="ask('Qiymətlər')">
+        💰 Qiymətlər
     </button>
 
 
     <button onclick="ask('Standart otaq')">
-        ??? Standart
+        🛏️ Standart
     </button>
 
 
-    <button onclick="ask('3 n?f?rlik otaq')">
-        ?? 3 n?f?rlik
+    <button onclick="ask('3 nəfərlik otaq')">
+        👥 3 nəfərlik
     </button>
 
 
     <button onclick="ask('Deluxe otaq')">
-        ? Deluxe
+        ⭐ Deluxe
     </button>
 
 
     <button onclick="ask('Suite otaq')">
-        ? Suite
+        ✨ Suite
     </button>
 
 
-    <button onclick="ask('Ail? otag?')">
-        ???????? Ail? otag?
+    <button onclick="ask('Ailə otağı')">
+        👨‍👩‍👧 Ailə otağı
     </button>
 
 
     <button onclick="ask('Restoran')">
-        ??? Restoran
+        🍽️ Restoran
     </button>
 
 
     <button onclick="ask('Rezervasiya')">
-        ?? Rezervasiya
+        📅 Rezervasiya
     </button>
 
 
-    <button onclick="ask('?lav? s?xs')">
-        ??? ?lav? s?xs
+    <button onclick="ask('Əlavə şəxs')">
+        🛏️ Əlavə şəxs
     </button>
 
 
     <button onclick="ask('Booking')">
-        ?? Booking
+        📅 Booking
     </button>
 
 
     <button onclick="ask('Instagram')">
-        ?? Instagram
+        📱 Instagram
     </button>
 
 
@@ -1069,7 +1069,7 @@ input{
 >
 
     <span class="whatsapp-icon">
-        ?
+        ☎
     </span>
 
     WhatsApp
@@ -1089,7 +1089,7 @@ input{
     <input
         id="input"
         type="text"
-        placeholder="Sual?n?z? yaz?n..."
+        placeholder="Sualınızı yazın..."
         autocomplete="off"
         enterkeyhint="send"
     >
@@ -1097,10 +1097,10 @@ input{
     <button
         class="send"
         type="submit"
-        aria-label="Gond?r"
+        aria-label="Göndər"
     >
 
-        ?
+        ➤
 
     </button>
 
@@ -1113,7 +1113,7 @@ input{
 <script>
 
 /* =========================================================
-   MINALI BOUTIQUE HOTEL M?LUMAT BAZASI
+   MINALI BOUTIQUE HOTEL MƏLUMAT BAZASI
 ========================================================= */
 
 
@@ -1124,53 +1124,53 @@ const data = {
    STANDART
 ===================================================== */
 
-standard: `??? STANDART OTAQ
+standard: `🛏️ STANDART OTAQ
 
-Standart otaqlar?m?zdan umumilikd? 6 ?d?d movcuddur.
+Standart otaqlarımızdan ümumilikdə 6 ədəd mövcuddur.
 
-Qiym?t: 99 AZN
+Qiymət: 99 AZN
 
-Standart otaqlar qonag?n ist?yin? uygun olaraq:
+Standart otaqlar qonağın istəyinə uyğun olaraq:
 
-� DBL � bir boyuk carpay?
-� Twin � iki ayr? carpay?
+• DBL — bir böyük çarpayı
+• Twin — iki ayrı çarpayı
 
-variant?nda haz?rlana bil?r.
+variantında hazırlana bilər.
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 +30 AZN
 
-?lav? qiym?t? ?lav? carpay? v? s?h?r yem?yi daxildir.`,
+Əlavə qiymətə əlavə çarpayı və səhər yeməyi daxildir.`,
 
 
 /* =====================================================
-   3 N?F?RLIK
+   3 NƏFƏRLİK
 ===================================================== */
 
-triple: `?? 3 N?F?RLIK OTAQ
+triple: `👥 3 NƏFƏRLİK OTAQ
 
-Oteld? 3 ?d?d 3 n?f?rlik otaq movcuddur.
+Oteldə 3 ədəd 3 nəfərlik otaq mövcuddur.
 
-Qiym?t: 149 AZN
+Qiymət: 149 AZN
 
-Otaqlar q?dimi v? xususi dizayn uslubundad?r.
+Otaqlar qədimi və xüsusi dizayn üslubundadır.
 
-Carpay? secimi qonag?n ist?yin? uygun olaraq
-movcudluga ?sas?n d?yisdiril? bil?r.
+Çarpayı seçimi qonağın istəyinə uyğun olaraq
+mövcudluğa əsasən dəyişdirilə bilər.
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 +30 AZN
 
-?lav? carpay? v? s?h?r yem?yi daxildir.`,
+Əlavə çarpayı və səhər yeməyi daxildir.`,
 
 
 /* =====================================================
    DELUXE
 ===================================================== */
 
-deluxe: `? DELUXE OTAQ
+deluxe: `⭐ DELUXE OTAQ
 
-Oteld? 2 ?d?d Deluxe otaq movcuddur.
+Oteldə 2 ədəd Deluxe otaq mövcuddur.
 
 Balkonlu Deluxe:
 130 AZN
@@ -1178,126 +1178,126 @@ Balkonlu Deluxe:
 Balkonsuz Deluxe:
 120 AZN
 
-Otaqlar qonag?n ist?yin? uygun olaraq,
-movcudluga ?sas?n DBL v? ya Twin carpay? il? haz?rlana bil?r.
+Otaqlar qonağın istəyinə uyğun olaraq,
+mövcudluğa əsasən DBL və ya Twin çarpayı ilə hazırlana bilər.
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 +30 AZN
 
-?lav? carpay? v? s?h?r yem?yi daxildir.`,
+Əlavə çarpayı və səhər yeməyi daxildir.`,
 
 
 /* =====================================================
    SUITE
 ===================================================== */
 
-suite: `? SUITE OTAQ
+suite: `✨ SUITE OTAQ
 
-Qiym?t:
+Qiymət:
 219 AZN
 
-Suite otaq daha genis v? komfortlu yerl?sm? ucun n?z?rd? tutulub.
+Suite otaq daha geniş və komfortlu yerləşmə üçün nəzərdə tutulub.
 
-Carpay? secimi movcudluga ?sas?n
-DBL v? ya Twin ola bil?r.
+Çarpayı seçimi mövcudluğa əsasən
+DBL və ya Twin ola bilər.
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 +30 AZN
 
-?lav? carpay? v? s?h?r yem?yi daxildir.`,
+Əlavə çarpayı və səhər yeməyi daxildir.`,
 
 
 /* =====================================================
-   AIL?
+   AİLƏ
 ===================================================== */
 
-family: `???????? AIL? OTAGI
+family: `👨‍👩‍👧 AİLƏ OTAĞI
 
-Qiym?t:
+Qiymət:
 219 AZN
 
-Ail? otag? 2 otaqdan ibar?tdir.
+Ailə otağı 2 otaqdan ibarətdir.
 
 Otaqda:
 
-� 2 ayr? otaq
-� Jacuzzi
-� Balkon
-� Dag m?nz?r?si
+• 2 ayrı otaq
+• Jacuzzi
+• Balkon
+• Dağ mənzərəsi
 
-movcuddur.
+mövcuddur.
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 +30 AZN
 
-?lav? carpay? v? s?h?r yem?yi daxildir.`,
+Əlavə çarpayı və səhər yeməyi daxildir.`,
 
 
 /* =====================================================
    RESTORAN
 ===================================================== */
 
-restaurant: `??? MINALI BOUTIQUE HOTEL RESTORANI
+restaurant: `🍽️ MINALI BOUTIQUE HOTEL RESTORANI
 
-Restoran?m?z otelin 3-cu m?rt?b?sind? yerl?sir.
+Restoranımız otelin 3-cü mərtəbəsində yerləşir.
 
-Menyumuz milli v? Avropa m?tb?xinin
-muxt?lif yem?kl?ri il? z?ngindir.
+Menyumuz milli və Avropa mətbəxinin
+müxtəlif yeməkləri ilə zəngindir.
 
-Restoran menyusuna baxmaq ucun
-WhatsApp vasit?sil? komandam?zla ?laq? saxlaya bil?rsiniz.
+Restoran menyusuna baxmaq üçün
+WhatsApp vasitəsilə komandamızla əlaqə saxlaya bilərsiniz.
 
-?? +994 50 492 00 44`,
+📞 +994 50 492 00 44`,
 
 
 /* =====================================================
    HOTEL
 ===================================================== */
 
-hotel: `??? MINALI BOUTIQUE HOTEL
+hotel: `🏛️ MINALI BOUTIQUE HOTEL
 
-Otelimiz S?ki s?h?rinin m?rk?zind?,
-qoruq ?razisind? yerl?sir.
+Otelimiz Şəki şəhərinin mərkəzində,
+qoruq ərazisində yerləşir.
 
-Xan Saray?na ged?n yolun uz?rind? yerl?sirik.
+Xan Sarayına gedən yolun üzərində yerləşirik.
 
-Otelimizin binas? 1896-c? ild? tikilmis tarixi binad?r.
+Otelimizin binası 1896-cı ildə tikilmiş tarixi binadır.
 
-Binan?n t?mirin? 2011-ci ild? baslan?l?b
-v? 2019-cu ild? istifad?y? verilib.
+Binanın təmirinə 2011-ci ildə başlanılıb
+və 2019-cu ildə istifadəyə verilib.
 
-Umumilikd? oteld? 12 otaq movcuddur.
+Ümumilikdə oteldə 12 otaq mövcuddur.
 
-?? +994 50 492 00 44`,
+📞 +994 50 492 00 44`,
 
 
 /* =====================================================
    PRICES
 ===================================================== */
 
-prices: `?? MINALI BOUTIQUE HOTEL � QIYM?TL?R
+prices: `💰 MINALI BOUTIQUE HOTEL — QİYMƏTLƏR
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-??? STANDART
+🛏️ STANDART
 
 6 otaq
 99 AZN
 
-DBL v? ya Twin
+DBL və ya Twin
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-?? 3 N?F?RLIK
+👥 3 NƏFƏRLİK
 
 3 otaq
 149 AZN
 
-Q?dimi dizayn
+Qədimi dizayn
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-? DELUXE
+⭐ DELUXE
 
 Balkonlu:
 130 AZN
@@ -1305,36 +1305,36 @@ Balkonlu:
 Balkonsuz:
 120 AZN
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-? SUITE
+✨ SUITE
 
 219 AZN
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-???????? AIL? OTAGI
+👨‍👩‍👧 AİLƏ OTAĞI
 
 2 otaq
 Jacuzzi
 Balkon
-Dag m?nz?r?si
+Dağ mənzərəsi
 
 219 AZN
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-??? ?LAV? S?XS
+🛏️ ƏLAVƏ ŞƏXS
 
-5 yasdan yuxar?:
-+30 AZN / n?f?r
+5 yaşdan yuxarı:
++30 AZN / nəfər
 
-?lav? carpay? v? s?h?r yem?yi daxildir.
+Əlavə çarpayı və səhər yeməyi daxildir.
 
-????????????????
+━━━━━━━━━━━━━━━━
 
-?? Bayram v? xususi gunl?rd?
-qiym?tl?r d?yis? bil?r.`
+⚠️ Bayram və xüsusi günlərdə
+qiymətlər dəyişə bilər.`
 
 
 };
@@ -1349,13 +1349,13 @@ function normalizeText(text){
     return text
         .toLocaleLowerCase("az-AZ")
         .trim()
-        .replace(/[?]/g,"e")
-        .replace(/[?]/g,"i")
-        .replace(/[o]/g,"o")
-        .replace(/[u]/g,"u")
-        .replace(/[s]/g,"s")
-        .replace(/[c]/g,"c")
-        .replace(/[g]/g,"g");
+        .replace(/[ə]/g,"e")
+        .replace(/[ı]/g,"i")
+        .replace(/[ö]/g,"o")
+        .replace(/[ü]/g,"u")
+        .replace(/[ş]/g,"s")
+        .replace(/[ç]/g,"c")
+        .replace(/[ğ]/g,"g");
 }
 
 
@@ -1407,7 +1407,7 @@ function answer(question){
         x.includes("salam,")
     ){
 
-        return "Salam! ?? MinAli Boutique Hotel-? xos g?lmisiniz. Siz? nec? kom?k ed? bil?r?m?";
+        return "Salam! 👋 MinAli Boutique Hotel-ə xoş gəlmisiniz. Sizə necə kömək edə bilərəm?";
 
     }
 
@@ -1420,12 +1420,12 @@ function answer(question){
         x.includes("sabah xeyir")
     ){
 
-        return "Sabah?n?z xeyir! ?? MinAli Boutique Hotel-? xos g?lmisiniz. Siz? nec? kom?k ed? bil?r?m?";
+        return "Sabahınız xeyir! ☀️ MinAli Boutique Hotel-ə xoş gəlmisiniz. Sizə necə kömək edə bilərəm?";
 
     }
 
 
-    /* AXSAM */
+    /* AXŞAM */
 
     if(
         x.includes("axsaminiz xeyir") ||
@@ -1433,7 +1433,7 @@ function answer(question){
         x.includes("axsam xeyir")
     ){
 
-        return "Axsam?n?z xeyir! ?? Siz? nec? kom?k ed? bil?r?m?";
+        return "Axşamınız xeyir! 🌙 Sizə necə kömək edə bilərəm?";
 
     }
 
@@ -1445,7 +1445,7 @@ function answer(question){
         x.includes("hotel haqqinda") ||
         x.includes("umumi melumat") ||
         x.includes("harada yerlesir") ||
-        x.includes("harada yerl?sir") ||
+        x.includes("harada yerləsir") ||
         x.includes("tarixi bina") ||
         x.includes("1896") ||
         x.includes("xan sarayi") ||
@@ -1458,7 +1458,7 @@ function answer(question){
     }
 
 
-    /* QIYM?TL?R */
+    /* QİYMƏTLƏR */
 
     if(
         x==="qiymet" ||
@@ -1490,7 +1490,7 @@ function answer(question){
     }
 
 
-    /* 3 N?F?RLIK */
+    /* 3 NƏFƏRLİK */
 
     if(
         x.includes("3 neferlik") ||
@@ -1523,7 +1523,7 @@ function answer(question){
     if(
         x.includes("suite") ||
         x.includes("suit") ||
-        x.includes("su?t")
+        x.includes("suıt")
     ){
 
         return data.suite;
@@ -1531,11 +1531,11 @@ function answer(question){
     }
 
 
-    /* AIL? */
+    /* AİLƏ */
 
     if(
         x.includes("aile") ||
-        x.includes("ail?") ||
+        x.includes("ailə") ||
         x.includes("family") ||
         x.includes("4 neferlik")
     ){
@@ -1545,7 +1545,7 @@ function answer(question){
     }
 
 
-    /* 5+ S?XS */
+    /* 5+ ŞƏXS */
 
     if(
         x.includes("elave sexs") ||
@@ -1558,22 +1558,22 @@ function answer(question){
         x.includes("elave carpayi")
     ){
 
-        return `??? ?LAV? S?XS
+        return `🛏️ ƏLAVƏ ŞƏXS
 
-5 yasdan yuxar? ?lav? s?xs ucun:
+5 yaşdan yuxarı əlavə şəxs üçün:
 
-+30 AZN / n?f?r
++30 AZN / nəfər
 
-Qiym?t?:
+Qiymətə:
 
-� ?lav? carpay?
-� S?h?r yem?yi
+• Əlavə çarpayı
+• Səhər yeməyi
 
 daxildir.
 
-Konkret otaq ucun ?lav? s?xsin yerl?sdirilm?sini komandam?zla d?qiql?sdir? bil?rsiniz.
+Konkret otaq üçün əlavə şəxsin yerləşdirilməsini komandamızla dəqiqləşdirə bilərsiniz.
 
-?? +994 50 492 00 44`;
+📞 +994 50 492 00 44`;
 
     }
 
@@ -1594,7 +1594,7 @@ Konkret otaq ucun ?lav? s?xsin yerl?sdirilm?sini komandam?zla d?qiql?sdir? bil?r
     }
 
 
-    /* REZERVASIYA */
+    /* REZERVASİYA */
 
     if(
         x.includes("rezervasiya") ||
@@ -1604,39 +1604,39 @@ Konkret otaq ucun ?lav? s?xsin yerl?sdirilm?sini komandam?zla d?qiql?sdir? bil?r
         x.includes("2 neferlik otaq var")
     ){
 
-        return `?? REZERVASIYA
+        return `📅 REZERVASİYA
 
-Rezervasiya v? bos otaqlar haqq?nda d?qiq m?lumat ucun komandam?zla ?laq? saxlamag?n?z? xahis edirik.
+Rezervasiya və boş otaqlar haqqında dəqiq məlumat üçün komandamızla əlaqə saxlamağınızı xahiş edirik.
 
-?? +994 50 492 00 44
+📞 +994 50 492 00 44
 
-Siz biz? asag?dak? m?lumatlar? gond?r? bil?rsiniz:
+Siz bizə aşağıdakı məlumatları göndərə bilərsiniz:
 
-� Giris tarixi
-� C?x?s tarixi
-� Qonaq say?
-� Ist?diyiniz otaq tipi
+• Giriş tarixi
+• Çıxış tarixi
+• Qonaq sayı
+• İstədiyiniz otaq tipi
 
-Komandam?z siz? movcud otaqlar? v? qiym?ti bildir?c?k.`;
+Komandamız sizə mövcud otaqları və qiyməti bildirəcək.`;
 
     }
 
 
-    /* L?GV */
+    /* LƏĞV */
 
     if(
         x.includes("legv") ||
         x.includes("rezervasiyani legv")
     ){
 
-        return `?? REZERVASIYANIN L?GVI
+        return `📅 REZERVASİYANIN LƏĞVİ
 
-Rezervasiyan?z? l?gv etm?k ist?yirsinizs?,
-z?hm?t olmasa komandam?zla ?laq? saxlay?n.
+Rezervasiyanızı ləğv etmək istəyirsinizsə,
+zəhmət olmasa komandamızla əlaqə saxlayın.
 
-?? +994 50 492 00 44
+📞 +994 50 492 00 44
 
-Komandam?z rezervasiyan?z?n l?gvi il? bagl? siz? kom?k ed?c?k.`;
+Komandamız rezervasiyanızın ləğvi ilə bağlı sizə kömək edəcək.`;
 
     }
 
@@ -1648,15 +1648,15 @@ Komandam?z rezervasiyan?z?n l?gvi il? bagl? siz? kom?k ed?c?k.`;
         x.includes("bookingden")
     ){
 
-        return `?? BOOKING
+        return `📅 BOOKING
 
-MinAli Boutique Hotel ucun Booking s?hif?mizd?n d? rezervasiya ed? bil?rsiniz.
+MinAli Boutique Hotel üçün Booking səhifəmizdən də rezervasiya edə bilərsiniz.
 
-Booking-d?:
+Booking-də:
 
 "MinAli Boutique Hotel"
 
-ad?n? axtararaq otelimizi tapa bil?rsiniz.`;
+adını axtararaq otelimizi tapa bilərsiniz.`;
 
     }
 
@@ -1668,16 +1668,16 @@ ad?n? axtararaq otelimizi tapa bil?rsiniz.`;
         x.includes("insta")
     ){
 
-        return `?? INSTAGRAM
+        return `📱 INSTAGRAM
 
-Instagram s?hif?mizd? otelimizin s?kil v? videolar? il? tan?s ola bil?rsiniz.
+Instagram səhifəmizdə otelimizin şəkil və videoları ilə tanış ola bilərsiniz.
 
-Yeni paylas?mlar v? otelimiz haqq?nda goruntul?r ucun bizi Instagram-da izl?y? bil?rsiniz.`;
+Yeni paylaşımlar və otelimiz haqqında görüntülər üçün bizi Instagram-da izləyə bilərsiniz.`;
 
     }
 
 
-    /* CARPAYI */
+    /* ÇARPAYI */
 
     if(
         x.includes("twin") ||
@@ -1687,19 +1687,19 @@ Yeni paylas?mlar v? otelimiz haqq?nda goruntul?r ucun bizi Instagram-da izl?y? b
         x.includes("boyuk carpayi")
     ){
 
-        return `??? CARPAYI SECIMI
+        return `🛏️ ÇARPAYI SEÇİMİ
 
-Otelimizd? otaq tipind?n as?l? olaraq carpay? secimi mumkundur.
+Otelimizdə otaq tipindən asılı olaraq çarpayı seçimi mümkündür.
 
-� DBL � bir boyuk carpay?
-� Twin � iki ayr? carpay?
+• DBL — bir böyük çarpayı
+• Twin — iki ayrı çarpayı
 
-Qonag?n ist?yin? uygun secim etm?k mumkundur.
+Qonağın istəyinə uyğun seçim etmək mümkündür.
 
 Qeyd:
-Konkret carpay? tipinin movcudlugunu rezervasiya zaman? komandam?zla d?qiql?sdirm?k olar.
+Konkret çarpayı tipinin mövcudluğunu rezervasiya zamanı komandamızla dəqiqləşdirmək olar.
 
-?? +994 50 492 00 44`;
+📞 +994 50 492 00 44`;
 
     }
 
@@ -1711,15 +1711,15 @@ Konkret carpay? tipinin movcudlugunu rezervasiya zaman? komandam?zla d?qiql?sdir
         x.includes("xususi gun")
     ){
 
-        return `?? BAYRAM V? XUSUSI GUNL?R
+        return `🎉 BAYRAM VƏ XÜSUSİ GÜNLƏR
 
-Bayram v? xususi gunl?rd? otaq qiym?tl?ri d?yis? bil?r.
+Bayram və xüsusi günlərdə otaq qiymətləri dəyişə bilər.
 
-?n aktual qiym?ti oyr?nm?k ucun:
+Ən aktual qiyməti öyrənmək üçün:
 
-?? +994 50 492 00 44
+📞 +994 50 492 00 44
 
-nomr?si il? komandam?zla ?laq? saxlaya bil?rsiniz.`;
+nömrəsi ilə komandamızla əlaqə saxlaya bilərsiniz.`;
 
     }
 
@@ -1731,13 +1731,13 @@ nomr?si il? komandam?zla ?laq? saxlaya bil?rsiniz.`;
         x.includes("qrup rezervasiya")
     ){
 
-        return `?? QRUP REZERVASIYASI
+        return `👥 QRUP REZERVASİYASI
 
-Qrup rezervasiyalar?nda otaq say?ndan as?l? olaraq qiym?td? endirim t?tbiq oluna bil?r.
+Qrup rezervasiyalarında otaq sayından asılı olaraq qiymətdə endirim tətbiq oluna bilər.
 
-D?qiq qiym?t ucun qonaq say?n? v? t?l?b olunan otaq say?n? biz? bildir? bil?rsiniz.
+Dəqiq qiymət üçün qonaq sayını və tələb olunan otaq sayını bizə bildirə bilərsiniz.
 
-?? +994 50 492 00 44`;
+📞 +994 50 492 00 44`;
 
     }
 
@@ -1751,7 +1751,7 @@ D?qiq qiym?t ucun qonaq say?n? v? t?l?b olunan otaq say?n? biz? bildir? bil?rsin
         x.includes("whatsapp")
     ){
 
-        return `?? ?LAQ?
+        return `📞 ƏLAQƏ
 
 MinAli Boutique Hotel
 
@@ -1759,21 +1759,21 @@ Telefon / WhatsApp:
 
 +994 50 492 00 44
 
-?? minaliboutiquehotel@gmail.com`;
+📧 minaliboutiquehotel@gmail.com`;
 
     }
 
 
     /* DEFAULT */
 
-    return `Bu sual ucun haz?r m?lumat bazam?zda d?qiq cavab yoxdur.
+    return `Bu sual üçün hazır məlumat bazamızda dəqiq cavab yoxdur.
 
-Z?hm?t olmasa komandam?zla ?laq? saxlay?n.
-Siz? m?mnuniyy?tl? kom?k ed?c?yik.
+Zəhmət olmasa komandamızla əlaqə saxlayın.
+Sizə məmnuniyyətlə kömək edəcəyik.
 
-?? +994 50 492 00 44
+📞 +994 50 492 00 44
 
-?? WhatsApp vasit?sil? d? biz? yaza bil?rsiniz.`;
+💬 WhatsApp vasitəsilə də bizə yaza bilərsiniz.`;
 
 }
 
